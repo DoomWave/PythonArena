@@ -1,6 +1,6 @@
 from Enemy import * 
 
-enemy = Enemy()
-enemy.type_of_enemy = 'Grunt'
+Draugr = Enemy()
+Draugr.type_of_enemy = 'Draugr'
 
-print(f'{enemy.type_of_enemy} has {enemy.health_points} health points and can do an attack of {enemy.attack_damage}')
+print(Draugr.attack())

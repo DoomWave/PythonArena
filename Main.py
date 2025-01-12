@@ -1,8 +1,6 @@
 from Enemy import *
 
-Draugr = Enemy()
-Draugr.type_of_enemy = 'Draugr'
-Draugr.attack_damage = 1
-Draugr.health_points = 10
+Draugr = Enemy('Draugr', 10, 1)
+Draugr.type_of_enemy = 'Boomer'
 
-print(Draugr.attack())
+print(Draugr.type_of_enemy)

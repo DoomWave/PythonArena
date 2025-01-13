@@ -1,4 +1,5 @@
 from Enemy import *
+from Draugr import *
 
 Draugr = Enemy('Draugr', 10, 1)
 

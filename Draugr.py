@@ -1,4 +1,5 @@
 from Enemy import *
+import random
 
 
 class Draugr(Enemy):
@@ -13,3 +14,9 @@ class Draugr(Enemy):
 
     def battle_cry(self):
         print('The Draugr is screaming his battle cry')
+
+    def special_attack(self):
+        did_special_attack_work = random.random() < 0.70
+        if did_special_attack_work:
+            self.attack_damage += 5
+            print('The Draugr is invoking his Thu-um')

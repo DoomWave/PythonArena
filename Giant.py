@@ -1,5 +1,5 @@
 from Enemy import *
-
+import random
 
 class Giant(Enemy):
 
@@ -10,3 +10,10 @@ class Giant(Enemy):
 
     def talk(self):
         print('Giant is looking you without making any noise')
+
+
+    def special_attack(self):
+        did_special_attack_work = random.random() < 0.30
+        if did_special_attack_work:
+            self.attack_damage += 25
+            print('The Giant is using his big hammer to attack to blow away in the sky')

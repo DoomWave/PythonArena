@@ -41,6 +41,8 @@ def hero_battle(hero: Hero, enemy: Enemy):
         
     print('--------')
 
+    enemy.special_attack()
+
     if hero.health_points > 0:
         print(f'Hero wins!')
     else:
@@ -49,6 +51,9 @@ def hero_battle(hero: Hero, enemy: Enemy):
 draugr = Draugr(10, 5)
 giant = Giant(50, 10)
 hero = Hero(12, 3)
+weapon = Weapon('DragonSlayer', 55)
+hero.weapon = weapon
+hero.equip_weapon()
 
-hero_battle(hero, draugr)
+hero_battle(hero, giant)
 

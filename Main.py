@@ -1,7 +1,8 @@
 from Enemy import *
 from Draugr import *
 from Giant import *
-
+from Hero import *
+from Weapon import *
 
 def battle(e1: Enemy, e2: Enemy):
     e1.talk()
@@ -20,13 +21,34 @@ def battle(e1: Enemy, e2: Enemy):
         
     print('--------')
 
-
     if e1.health_points > 0:
         print(f'{e1.get_type_of_enemy()} wins!')
     else:
         print(f'{e2.get_type_of_enemy()} wins!')
 
-Draugr = Draugr(10, 5)
-Giant = Giant(50, 10)
 
-battle(Draugr, Giant)
+def hero_battle(hero: Hero, enemy: Enemy):
+
+
+    while hero.health_points> 0 and enemy.health_points > 0:
+        print('--------')
+        print(f'Hero: {hero.attack_damage} Damage Points increased')
+        print(f'{enemy.get_type_of_enemy()}: {enemy.attack_damage} Damage Points increased')
+        enemy.attack()
+        hero.health_points  -= enemy.attack_damage
+        hero.attack()
+        enemy.health_points -= hero.attack_damage
+        
+    print('--------')
+
+    if hero.health_points > 0:
+        print(f'Hero wins!')
+    else:
+        print(f'{enemy.get_type_of_enemy()} wins!')
+
+draugr = Draugr(10, 5)
+giant = Giant(50, 10)
+hero = Hero(12, 3)
+
+hero_battle(hero, draugr)
+
